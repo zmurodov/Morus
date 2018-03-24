@@ -1,117 +1,225 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     >
 
-    <FrameLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhite"
+        android:orientation="vertical"
+        >
 
-        <TextView
-            android:id="@+id/tvUserName"
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:id="@+id/tvUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Жалолов Ойбек"
+                android:textSize="18sp"
+                />
+
+            <ImageView
+                android:id="@+id/ivEditName"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                />
+
+        </FrameLayout>
+
+        <ImageView
+            android:id="@+id/ivUserImage"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center"
+            android:layout_marginBottom="8dp"
+            android:layout_marginTop="8dp"
+            />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/colorGreyLight"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+
+            android:text="Название организации"
+            android:textColor="@color/colorGreyDark"
+            android:textSize="14sp"
+            />
+
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvUserCompany"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+
+            android:text="AgroAlpha OOO"
+            android:textSize="16sp"
             />
 
-        <ImageView
-            android:id="@+id/ivEditName"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
+        <android.support.v7.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
+
+            android:text="Адрес"
+            android:textColor="@color/colorGreyDark"
+            android:textSize="14sp"
             />
 
-    </FrameLayout>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvUserAddess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
 
-    <ImageView
-        android:id="@+id/ivUserImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+            android:text="г.Ташкент, ул Шахрисабз 51"
+            android:textSize="16sp"
+            />
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/tvUserCompany"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <TextView
-        android:id="@+id/tvUserAddess"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <TextView
-        android:id="@+id/tvUserPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        />
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="2dp"/>
-
-    <FrameLayout
-        android:id="@+id/flHelp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
+        <android.support.v7.widget.AppCompatTextView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"/>
+            android:text="Телефон"
+            android:textColor="@color/colorGreyDark"
+            android:textSize="14sp"
+            />
 
-    </FrameLayout>
+        <android.support.v7.widget.AppCompatTextView
+            android:id="@+id/tvUserPhone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="4dp"
 
-    <FrameLayout
-        android:id="@+id/fl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <TextView
+            android:text="998919111111"
+            android:textSize="16sp"/>
+
+        <View
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="2dp"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorGreyLight"
+            />
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"/>
 
-    </FrameLayout>
-
-    <FrameLayout
-        android:id="@+id/flHelp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-        <TextView
+        <FrameLayout
+            android:id="@+id/flHelp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            >
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"/>
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="Помощь"
+                android:textSize="16sp"
+                />
 
-    </FrameLayout>
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                />
 
 
-</LinearLayout>
+        </FrameLayout>
+
+
+        <FrameLayout
+            android:id="@+id/flFeedback"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            >
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="Обратная связь"
+                android:textSize="16sp"
+                />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                />
+
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:id="@+id/flAgreement"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="8dp"
+            android:paddingEnd="16dp"
+            android:paddingStart="16dp"
+            android:paddingTop="8dp"
+            >
+
+
+            <android.support.v7.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:text="Условия исползования"
+                android:textSize="16sp"
+                />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="end|center_vertical"
+                />
+
+
+        </FrameLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>

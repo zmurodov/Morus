@@ -11,7 +11,9 @@ import kotlinx.android.synthetic.main.activity_main.*
 import uz.morus.base.BaseActivity
 import android.provider.MediaStore
 import android.support.design.widget.NavigationView
+import android.support.v4.app.Fragment
 import uz.morus.R
+import uz.morus.fragment.UserFragment
 
 
 /**
@@ -26,6 +28,7 @@ import uz.morus.R
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -36,6 +39,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         toggle.syncState()
 
         nav_view.setNavigationItemSelectedListener(this)
+        nav_view.getHeaderView(0).setOnClickListener {
+            replaceFrag(UserFragment())
+        }
     }
 
     override fun onBackPressed() {
@@ -47,45 +53,58 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        // Inflate the menu; this adds items to the action bar if it is present.
         menuInflater.inflate(R.menu.main, menu)
         return true
     }
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-//        when (item.itemId) {
-//            R.id.action_settings -> return true
-//            else -> return super.onOptionsItemSelected(item)
-//        }
         return super.onOptionsItemSelected(item)
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        // Handle navigation view item clicks here.
         when (item.itemId) {
-//            R.id.nav_camera -> {
-//                // Handle the camera action
-//            }
-//            R.id.nav_gallery -> {
-//
-//            }
-//            R.id.nav_slideshow -> {
-//
-//            }
-//            R.id.nav_manage -> {
-//
-//            }
-//            R.id.nav_share -> {
-//
-//            }
-//            R.id.nav_send -> {
-//
-//            }
+            R.id.nav_delivery -> {
+
+            }
+            R.id.nav_product-> {
+
+            }
+            R.id.nav_favourite-> {
+
+            }
+            R.id.nav_menu -> {
+
+            }
+            R.id.nav_seller-> {
+
+            }
+            R.id.nav_price -> {
+
+            }
+            R.id.nav_message -> {
+
+            }
+
         }
 
         drawer_layout.closeDrawer(GravityCompat.START)
 
 
         return true
+    }
+
+
+    private fun replaceFrag(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.flContainer, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
+    }
+
+    private fun addFrag(fragment: Fragment){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.flContainer, fragment)
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }
