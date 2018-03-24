@@ -26,6 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:text="Жалолов Ойбек"
+                android:textColor="@color/colorBlack"
                 android:textSize="18sp"
                 />
 
@@ -34,6 +35,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_pencil"
                 />
 
         </FrameLayout>
@@ -45,6 +47,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
+            android:src="@drawable/ic_account"
             />
 
         <View
@@ -75,6 +78,7 @@
             android:paddingTop="4dp"
 
             android:text="AgroAlpha OOO"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
             />
 
@@ -100,6 +104,7 @@
             android:paddingTop="4dp"
 
             android:text="г.Ташкент, ул Шахрисабз 51"
+            android:textColor="@color/colorBlack"
             android:textSize="16sp"
             />
 
@@ -125,7 +130,9 @@
             android:paddingTop="4dp"
 
             android:text="998919111111"
-            android:textSize="16sp"/>
+            android:textColor="@color/colorBlack"
+            android:textSize="16sp"
+            />
 
         <View
             android:layout_width="match_parent"
@@ -150,6 +157,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
                 android:text="Помощь"
+                android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 />
 
@@ -157,6 +165,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_arrow_right"
                 />
 
 
@@ -172,22 +181,20 @@
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             >
-
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
                 android:text="Обратная связь"
+                android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 />
-
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_arrow_right"
                 />
-
-
         </FrameLayout>
 
         <FrameLayout
@@ -199,27 +206,22 @@
             android:paddingStart="16dp"
             android:paddingTop="8dp"
             >
-
-
             <android.support.v7.widget.AppCompatTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="start|center_vertical"
                 android:text="Условия исползования"
+                android:textColor="@color/colorBlack"
                 android:textSize="16sp"
                 />
-
             <ImageView
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:layout_gravity="end|center_vertical"
+                android:src="@drawable/ic_arrow_right"
                 />
-
-
         </FrameLayout>
 
-
     </LinearLayout>
-
 
 </ScrollView>
