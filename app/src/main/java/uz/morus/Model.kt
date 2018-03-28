@@ -17,4 +17,6 @@ object Model{
                       val logo :String)
 
     data class SellerWrapper( val sellist : MutableList<Seller>)
+
+    data class Somthing(val nothing: String)
 }
