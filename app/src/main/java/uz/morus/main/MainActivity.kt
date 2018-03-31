@@ -1,5 +1,6 @@
 package uz.morus.main
 
+import android.content.Context
 import android.os.Bundle
 
 import android.support.v4.view.GravityCompat
@@ -11,8 +12,17 @@ import kotlinx.android.synthetic.main.activity_main.*
 import uz.morus.base.BaseActivity
 import android.provider.MediaStore
 import android.support.design.widget.NavigationView
+import android.support.v4.app.ActivityCompat
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.schedulers.Schedulers
+import uz.morus.Model
 import uz.morus.R
+import uz.morus.api.ApiFactory
+import uz.morus.fragment.NewsDetailFragment
+import uz.morus.fragment.NewsFragment
+import uz.morus.fragment.SellersFragment
 import uz.morus.fragment.UserFragment
 
 
@@ -38,9 +48,20 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
 
+        var model: Model.News? = null
+        ApiFactory.getMorus()
+                .getNewsList(2063)
+                .subscribeOn(Schedulers.io())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe { model = it.news[0] }
+
+
+
+
         nav_view.setNavigationItemSelectedListener(this)
         nav_view.getHeaderView(0).setOnClickListener {
-            replaceFrag(UserFragment())
+            replaceFrag(SellersFragment())
+            drawer_layout.closeDrawer(GravityCompat.START)
         }
     }
 
@@ -66,16 +87,16 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.nav_delivery -> {
 
             }
-            R.id.nav_product-> {
+            R.id.nav_product -> {
 
             }
-            R.id.nav_favourite-> {
+            R.id.nav_favourite -> {
 
             }
             R.id.nav_menu -> {
 
             }
-            R.id.nav_seller-> {
+            R.id.nav_seller -> {
 
             }
             R.id.nav_price -> {
@@ -93,15 +114,16 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         return true
     }
 
-
-    private fun replaceFrag(fragment: Fragment){
+    //    companion object {
+    fun replaceFrag(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.flContainer, fragment)
         transaction.addToBackStack(null)
         transaction.commit()
     }
+//    }
 
-    private fun addFrag(fragment: Fragment){
+    private fun addFrag(fragment: Fragment) {
         val transaction = supportFragmentManager.beginTransaction()
         transaction.replace(R.id.flContainer, fragment)
         transaction.addToBackStack(null)

@@ -1,9 +1,14 @@
 package uz.morus.adapter
 
 import android.support.v7.widget.RecyclerView
+import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.TextView
+import com.squareup.picasso.Picasso
+import uz.morus.Model
+import uz.morus.R
 
 
 /**
@@ -14,22 +19,36 @@ import android.widget.ImageView
  * $github = github.com/kadiroff
  **/
 
-class SellerAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(){
+class SellerAdapter constructor(val data: MutableList<Model.Seller>) : RecyclerView.Adapter<SellerAdapter.SellerHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): RecyclerView.ViewHolder {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): SellerHolder {
+        return SellerHolder(LayoutInflater.from(parent?.context).inflate(R.layout.item_seller, parent, false))
+
     }
 
     override fun getItemCount(): Int {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        return data.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder?, position: Int) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override fun onBindViewHolder(holder: SellerHolder?, position: Int) {
+        holder?.bind(data[position])
     }
 
-    inner class SellerHolder(view : View) : RecyclerView.ViewHolder(view){
-       // private var iv :ImageView  = view.findViewById(R.)
-    }
+    inner class SellerHolder(view: View) : RecyclerView.ViewHolder(view) {
+        var circleImageView = view.findViewById<ImageView>(R.id.ivSellerImage)
+        var sellerName = view.findViewById<TextView>(R.id.tvSellerName)
+        var sellerEmail = view.findViewById<TextView>(R.id.tvSellerEmail)
+        var sellerTel = view.findViewById<TextView>(R.id.tvSellerTel)
 
+        fun bind(seller: Model.Seller) {
+            sellerName.text = seller.name
+            sellerEmail.text = seller.email
+            sellerTel.text = seller.phone
+            Picasso.get()
+                    .load("http://morus.uz/" + seller.logo)
+                    .fit()
+                    .centerCrop()
+                    .into(circleImageView)
+        }
+    }
 }

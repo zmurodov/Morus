@@ -13,9 +13,14 @@ import uz.morus.Model
  * $mail = jkadiroff@gmail.com
  * $github = github.com/kadiroff
  **/
-interface MorusService{
+interface MorusService {
 
-    @GET("sellerslist/list.php?{page}")
-    fun getSellerList(@Path("order_id") page: Int ) : Observable<Model.SellerWrapper>
+//    @GET("sellerslist/list.php?{page}")
+//    fun getSellerList(@Path("order_id") page: Int ) : Observable<Model.SellerWrapper>
 
+    @GET("sellerslist/list.php")
+    fun getSellerList(@Query("page") page: Int): Observable<Model.SellerWrapper>
+
+    @GET("news/detail.php")
+    fun getNewsList(@Query("ID") id : Int) : Observable<Model.NewsList>
 }
